@@ -1,0 +1,35 @@
+defaults:
+  - _self_
+  - model: multimodal_bc
+  - dataset: single-plate
+
+# training settings
+device: 'cuda:0'
+cudnn_deterministic: true
+cudnn_benchmark: false
+id: 'bc'
+random_seed: 144
+n_epochs: 4096
+n_scheduler_epochs: 1024
+n_checkpoint_epochs: 32
+n_batches: 32
+n_workers: 0
+lr: .0001
+weight_decay: .1
+initial_weights_path: null
+val_split: 0.0
+image_res: 128
+n_frame_stacks: 3
+seq_length: 4
+rotation_representation: 'rvec'
+action_distribution: 'deterministic'
+
+hydra:
+  job:
+    chdir: True
+  run:
+    dir: ../results/models/${now:%Y.%m.%d}/${hydra.job.override_dirname}_${now:%H-%M-%S}/
+  sweep:
+    dir: ../results/models/${now:%Y.%m.%d}/${hydra.job.override_dirname}_${now:%H-%M-%S}/
+    subdir: ${hydra.job.num}
+  

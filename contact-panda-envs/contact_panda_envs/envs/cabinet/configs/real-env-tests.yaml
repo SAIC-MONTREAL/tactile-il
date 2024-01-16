@@ -1,0 +1,8 @@
+reset_base_tool_tf: [0.35430369, 0.1247003,  0.52592601, 3.09927201, 0.62799267, 2.99414734]
+reset_joint_pos: [-0.36612878, -1.12888809,  0.50153951, -2.49008865,  0.44892901,  2.05897328, -2.28873614]
+init_gripper_random_lim: [.05, .05, .05, .1, .1, .1]  # 5 cm translation in all dimensions, rougly 5 degrees
+
+# making poses/actions more "realistic", as if we had a mobile base instead of fixed arm to cabinet transform
+pose_relative: 'reset'        # options: reset, base -- reset is relative to reset frame, base is to base
+t_action_base_frame: 't'      # b or t
+r_action_base_frame: 't'      # b or t

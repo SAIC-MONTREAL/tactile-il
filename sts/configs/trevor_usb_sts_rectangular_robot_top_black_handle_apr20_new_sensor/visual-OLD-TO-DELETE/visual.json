@@ -1,0 +1,19 @@
+{
+    "topic": "image",
+    "camera_srv": "/sts/set_camera_parameters",
+    "led_srv": "/sts/set_LEDs",
+    "LED_red": 0,
+    "LED_green": 4,
+    "LED_blue": 8,
+    "exposure_auto": 1,
+    "exposure_absolute": 10000,
+    "brightness": 64,
+    "contrast": 100,
+    "saturation": 100,
+    "strip_len": 18,
+    "device": 3,
+    "mask": "rectangular",
+    "marker_detection": "adaptive",
+    "contact_detection": "depth",
+    "white_balance_temperature_auto": 0
+}

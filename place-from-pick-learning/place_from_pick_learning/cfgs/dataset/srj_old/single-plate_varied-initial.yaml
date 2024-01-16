@@ -1,0 +1,14 @@
+dataset_name: single-plate_varied-initial
+dataset_config:
+  _target_: datasets.MultimodalManipBCDataset
+  data_dirs: [
+    "/home/rbslab/place-from-pick-learning/datasets/srj/dt-0.2_img-res-128_episodes-16_varied-initial-pose_all-blinds-down_4f6603592c62435e9f95996aecf2f3d5",
+    "/home/rbslab/place-from-pick-learning/datasets/srj/dt-0.2_img-res-128_episodes-16_varied-initial-pose_all-blinds-down_16e1449c25af409e96728041c5ff96ff",
+    "/home/rbslab/place-from-pick-learning/datasets/srj/dt-0.2_img-res-128_episodes-16_varied-initial-pose_all-blinds-down_28da000791c54fcca573ba825a4f8910",
+    "/home/rbslab/place-from-pick-learning/datasets/srj/dt-0.2_img-res-128_episodes-16_varied-initial-pose_all-blinds-down_12197f4a32554dc4a6b95d8f892f79eb"
+  ] 
+  rotation_representation: ${rotation_representation}
+  n_frame_stacks: ${n_frame_stacks}
+  seq_length: ${seq_length}
+  load_tensor: True
+  device: ${device}

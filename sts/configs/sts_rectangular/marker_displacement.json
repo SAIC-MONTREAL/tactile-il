@@ -1,0 +1,11 @@
+{
+    "scale_factor": 2,
+    "color": [255,255,0],
+    "reset_img_similarity": 5,
+    "max_shift_len": 10,
+    "thickness": 2,
+    "std_IC": 1,
+    "std_detected_dots": 1,
+    "std_undetected_dots": 15,
+    "std_dynamics": 20
+}

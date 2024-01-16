@@ -1,0 +1,1 @@
+from contact_panda_envs.envs.cabinet.cabinet_contact import *

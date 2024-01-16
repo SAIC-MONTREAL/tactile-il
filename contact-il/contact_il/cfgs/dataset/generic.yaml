@@ -1,0 +1,16 @@
+dataset_name: ${data_dir_name}
+dataset_config:
+  _target_: place_from_pick_learning.datasets.MultimodalManipBCDataset
+  data_dirs: [
+    "${env:CIL_DATA_DIR}/demonstrations/${data_dir_name}/data",
+  ]
+  env_config_file: "${env:CIL_DATA_DIR}/demonstrations/${data_dir_name}/env_parameters.json"
+  obs_rotation_representation: "${obs_rotation_representation}"
+  stored_obs_rotation_representation: "${stored_obs_rotation_representation}"
+  act_rotation_representation: "${act_rotation_representation}"
+  stored_act_rotation_representation: "${stored_act_rotation_representation}"
+  n_frame_stacks: ${n_frame_stacks}
+  seq_length: ${seq_length}
+  load_tensor: True
+  n_max_episodes: null  # null means use all
+  device: ${device}

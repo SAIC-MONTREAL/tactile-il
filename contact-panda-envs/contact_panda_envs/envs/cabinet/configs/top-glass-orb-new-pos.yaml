@@ -1,0 +1,28 @@
+# reset_base_tool_tf: [0.6814347, 0.01253439, 0.5587754, -2.911268, 1.023992, -3.068234]
+# reset_joint_pos: [-1.468517, 0.7356988, 1.908078, -1.889381, -1.562371, 2.262759, -1.395101]
+
+
+# TEST
+reset_base_tool_tf: [0.6845478, 0.01498378, 0.5548909, -2.748869, 1.039921, -2.95102]
+reset_joint_pos: [-2.150686, 0.1406135, 2.212711, -1.934958, -1.062288, 2.751531, -1.497075]
+
+# init_gripper_random_lim: [.01, .01, .01, .1, .1, .1]  # 1 cm translation in all dimensions, roughly 5 degrees
+# init_gripper_random_lim: [.01, .01, .01, 0.0, 0.0, .1]  # 1 cm translation in all dimensions, roughly 5 degrees
+init_gripper_random_lim: [.03, .03, .03, 0.0, 0.0, .3]  # 1 cm translation in all dimensions, roughly 5 degrees
+max_real_time: 12  # in seconds
+sts_num_contact_tac_thresh: 600
+sts_num_contact_vis_thresh: 200
+stiffness_params: {"translational_stiffness": 200.0,
+                   "rotational_stiffness": 10.0,
+                   "nullspace_stiffness": 0.5}
+damping_params: {"translational_damping": 1.0,
+                   "rotational_damping": 1.0,
+                   "nullspace_damping": 1.0}
+
+# making poses/actions more "realistic", as if we had a mobile base instead of fixed arm to cabinet transform
+pose_relative: 'reset'        # options: reset, base -- reset is relative to reset frame, base is to base
+t_action_base_frame: 't'      # b or t
+r_action_base_frame: 't'      # b or t
+
+# path relative to contact_panda_envs/envs
+auto_reset_traj_file: cabinet/configs/reset_trajs/PandaTopGlassOrb/04-08-23-14_48_41.pkl

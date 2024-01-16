@@ -1,0 +1,1 @@
+{"type": "BGR", "A_low": 28, "B_high": 93, "C_low": 0, "A_high": 255, "B_low": 35, "C_high": 255, "window": 12, "opening": 4, "min_area": 50, "max_area": 300, "crop_radius": 175, "erosion": 6, "overlay": true, "invert": 0, "reference_img": "/home/rbslab/panda_ros2_ws/src/sts-cam-ros2/configs/sts_usb/reference.png", "config_file": "visual_marker_segmentation_hsv.json"}

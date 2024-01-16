@@ -1,0 +1,4 @@
+numpy
+transformations>=2021.6.6
+numpy-quaternion
+# open3d>=0.13.0  # only needed for visualization tests

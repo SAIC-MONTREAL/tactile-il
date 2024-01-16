@@ -1,0 +1,30 @@
+# ros docker
+alias new-container="bash $HOME/projects/ros-docker/new-container.sh"
+alias attach-to-container="bash $HOME/projects/ros-docker/attach-to-container.sh"
+alias attach-as-root="bash $HOME/projects/ros-docker/attach-as-root.sh"
+alias start-container="docker start -ai panda_ros"
+alias stop-container="docker stop panda_ros"
+
+# ros1 - noetic
+alias source-ros1="source /opt/ros/noetic/setup.bash"
+alias source-pandaws="source $HOME/panda_ws/devel/setup.bash"
+alias source-r1-all="source-ros1; source-pandaws"
+
+# ros2 - foxy
+alias source-ros2="source /opt/ros/foxy/setup.bash"
+alias source-pandar2ws="source $HOME/panda_ros2_ws/install/local_setup.bash"
+alias source-bridgews="source $HOME/bridge_ws/install/local_setup.bash"
+alias source-r2-all="source-ros2; source-pandar2ws; source-bridgews"
+alias start-bridge="bash /home/t.ablett/panda_ws/src/contact-panda-envs/shell_env_scripts/start_bridge.sh"
+alias start-bridge-all="bash /home/t.ablett/panda_ws/src/contact-panda-envs/shell_env_scripts/start_bridge_all.sh"
+alias cbuild="colcon build --symlink-install"
+
+# sts
+alias sts-rosbag-start="ros2 launch sts_tools sim_camera_bringup.launch.py source:=$HOME/datasets/sts-cam-ros2-data/version-2/sample-video/bolt_v2.mov config_dir:=$HOME/panda_ros2_ws/src/sts-cam-ros2/configs/sts_circular"
+alias sts-srj-rosbag-start="ros2 launch sts_tools sim_camera_bringup.launch.py source:=$HOME/datasets/sts-cam-ros2-data/srj-square-bad-flow/v0-0.mp4 config_dir:=$HOME/panda_ros2_ws/src/sts-cam-ros2/configs/sts_circular"
+alias sts-srj-320-rosbag-start="ros2 launch sts_tools sim_camera_bringup.launch.py source:=$HOME/datasets/sts-cam-ros2-data/srj-square-bad-flow/v0-0-320x240.mp4 config_dir:=$HOME/panda_ros2_ws/src/sts-cam-ros2/configs/sts_circular"
+alias sts-calibrate="ros2 launch sts calibrate_camera.launch.py config_dir:=$HOME/panda_ros2_ws/src/sts-cam-ros2/configs/trevor_rpi_sts_circular"
+alias sts-calibrate-visual="ros2 launch sts calibrate_camera.launch.py config_dir:=$HOME/panda_ros2_ws/src/sts-cam-ros2/configs/trevor_rpi_sts_circular mode:=visual"
+alias sts-mode-node="ros2 launch sts sts_mode_node.launch.py config_dir:=$HOME/panda_ros2_ws/src/sts-cam-ros2/configs/trevor_rpi_sts_circular"
+alias cd-sts="cd $HOME/panda_ros2_ws/src/sts-cam-ros2"
+alias sts-view="ros2 launch sts_tools camera_view.launch.py"

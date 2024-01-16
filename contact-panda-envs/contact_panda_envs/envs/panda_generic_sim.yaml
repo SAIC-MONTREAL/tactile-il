@@ -1,0 +1,25 @@
+# Fields that should overwrite the real defaults when using sim
+
+# resetting
+
+# gazebo
+# reset_base_tool_tf: [0.307, 0, 0.487, 3.14159, -.0245, 0]  # 3 for trans, 3 for rot, static xyz rotations
+# reset_joint_pos: [-0.001, -0.794, 0.001, -2.363, 0, 1.583, 0.785]     # 1 per joint, ensures consistent pose for above tf
+
+# polymetis pybullet
+reset_base_tool_tf: [0.5243246, -0.09264749, 0.3126985, -3.101661, -0.05165723, 1.48758]
+reset_joint_pos: [-0.1393543, -0.0204817, -0.05201414, -2.069126, 0.05058914, 2.002865, -0.9167874]
+
+stiffness_params: {"translational_stiffness": 200.0,
+                   "rotational_stiffness": 10.0,
+                   "nullspace_stiffness": 0.5}
+
+# path relative to contact_panda_envs/envs
+auto_reset_traj_file: cabinet/configs/reset_trajs/PandaCabinetOneFinger6DOF/02-24-23-16_34_36.pkl
+
+max_rot_vel: 1.5           # rad/s
+
+# making poses/actions more "realistic", as if we had a mobile base instead of fixed arm to cabinet transform
+pose_relative: 'reset'        # options: reset, base -- reset is relative to reset frame, base is to base
+t_action_base_frame: 't'      # b or t
+r_action_base_frame: 't'      # b or t

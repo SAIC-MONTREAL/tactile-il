@@ -1,0 +1,15 @@
+{
+    "type": "BGR",
+    "block_size": 69,
+    "channel": 1,
+    "window": 12,
+    "opening": 4,
+    "min_area": 1,
+    "max_area": 1200,
+    "crop_radius": 175,
+    "erosion": 6,
+    "overlay": true,
+    "invert": 1,
+    "reference_img": "/home/rbslab/panda_ros2_ws/src/sts-cam-ros2/configs/sts_usb/reference.png",
+    "config_file": "marker_segmentation_adaptive.json"
+}

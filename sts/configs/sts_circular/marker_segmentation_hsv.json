@@ -1,0 +1,18 @@
+{
+    "type": "BGR",
+    "A_low": 0,
+    "B_high": 83,
+    "C_low": 0,
+    "A_high": 255,
+    "B_low": 0,
+    "C_high": 255,
+    "window": 12,
+    "opening": 4,
+    "min_area": 1,
+    "max_area": 1200,
+    "crop_radius": 175,
+    "erosion": 1,
+    "overlay": true,
+    "invert": 0,
+    "config_file": "marker_segmentation_hsv.json"
+}

@@ -1,0 +1,9 @@
+dataset_name: single-plate_varied-initial
+dataset_config:
+  _target_: datasets.MultimodalManipBCDataset
+  data_dirs: ["/home/rbslab/place-from-pick-learning/datasets/panda/dt-0.2_img-res-128_episodes-64_all-blinds-down_varied-retrieval_noisy_06838ab417644b8ca50c5fbf2b56ccd9"] 
+  rotation_representation: ${rotation_representation}
+  n_frame_stacks: ${n_frame_stacks}
+  seq_length: ${seq_length}
+  load_tensor: True
+  device: ${device}

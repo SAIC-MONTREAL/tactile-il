@@ -1,0 +1,4 @@
+{
+    "n_leds": 18,
+    "port_name": "/dev/ttyACM0"
+}

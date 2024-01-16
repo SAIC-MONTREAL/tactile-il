@@ -1,0 +1,11 @@
+reset_base_tool_tf: [0.6609493, 0.2576536, 0.5529889, -2.968879, 0.5801971, -3.123439]
+reset_joint_pos: [0.1238502, 0.2332585, 0.4262416, -1.337743, -0.5610117, 1.946425, -1.699285]
+init_gripper_random_lim: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # no noise since it's only a test env
+max_real_time: 10  # in seconds
+
+# making poses/actions more "realistic", as if we had a mobile base instead of fixed arm to cabinet transform
+pose_relative: 'reset'        # options: reset, base -- reset is relative to reset frame, base is to base
+t_action_base_frame: 't'      # b or t
+r_action_base_frame: 't'      # b or t
+
+default_grip_state: 'c'       # closed since we want it to stay closed on an eraser

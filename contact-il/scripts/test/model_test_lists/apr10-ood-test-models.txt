@@ -1,0 +1,6 @@
+PandaTopGlassOrbNoSTSSwitch/higher_quality_tactile_only_1/20_eps/1/wrist_rgb-pose-prev_pose/apr9-higher_quality_
+PandaTopGlassOrb/higher_quality/20_eps/1/sts_raw_image-pose-prev_pose/apr9-higher_quality_
+PandaTopGlassOrbNoSTSSwitch/higher_quality_tactile_only_1/20_eps/2/wrist_rgb-pose-prev_pose/apr9-higher_quality_
+PandaTopGlassOrb/higher_quality/20_eps/2/sts_raw_image-pose-prev_pose/apr9-higher_quality_
+PandaTopGlassOrbNoSTSSwitch/higher_quality_tactile_only_1/20_eps/3/wrist_rgb-pose-prev_pose/apr9-higher_quality_
+PandaTopGlassOrb/higher_quality/20_eps/3/sts_raw_image-pose-prev_pose/apr9-higher_quality_

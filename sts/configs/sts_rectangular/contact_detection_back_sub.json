@@ -1,0 +1,14 @@
+{
+    "type": "BGR",
+    "A_low": 31,
+    "B_high": 120,
+    "C_low": 0,
+    "A_high": 131,
+    "B_low": 0,
+    "C_high": 255,
+    "erosion": 1,
+    "invert": 0,
+    "config_file": "contact_detection_hsv.json"
+    "blur_k": 11,
+    "gradient_k": 5
+}

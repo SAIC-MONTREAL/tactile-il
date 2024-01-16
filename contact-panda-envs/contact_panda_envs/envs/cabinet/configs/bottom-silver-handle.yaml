@@ -1,0 +1,22 @@
+reset_base_tool_tf: [0.6903361, 0.009305245, 0.2001958, -3.025984, 0.8932915, 3.132752]
+reset_joint_pos: [0.01647566, 0.4125467, -0.07759918, -1.890504, -2.306018, 3.060062, -0.05299626]
+# init_gripper_random_lim: [.01, .01, .01, .1, .1, .1]  # 1 cm translation in all dimensions, roughly 5 degrees
+# init_gripper_random_lim: [.01, .01, .01, 0.0, 0.0, .1]  # 1 cm translation in all dimensions, roughly 5 degrees
+init_gripper_random_lim: [.03, .03, .03, 0.0, 0.0, .3]  # 1 cm translation in all dimensions, roughly 5 degrees
+max_real_time: 12  # in seconds
+sts_num_contact_tac_thresh: 600
+sts_num_contact_vis_thresh: 200
+stiffness_params: {"translational_stiffness": 200.0,
+                   "rotational_stiffness": 10.0,
+                   "nullspace_stiffness": 0.5}
+damping_params: {"translational_damping": 1.0,
+                   "rotational_damping": 1.0,
+                   "nullspace_damping": 1.0}
+
+# making poses/actions more "realistic", as if we had a mobile base instead of fixed arm to cabinet transform
+pose_relative: 'reset'        # options: reset, base -- reset is relative to reset frame, base is to base
+t_action_base_frame: 't'      # b or t
+r_action_base_frame: 't'      # b or t
+
+# path relative to contact_panda_envs/envs
+auto_reset_traj_file: cabinet/configs/reset_trajs/PandaBottomSilverHandle/04-11-23-14_26_59.pkl

@@ -1,0 +1,14 @@
+env_name: placefrompick_no-sts
+env_config:
+  _target_: place_from_pick_learning.envs.place_from_pick_env.PlaceFromPickEnv
+  home_joints: [0.22101389, -0.90719043, -0.61968366, -2.20749528, 0.24118105, 1.37932865, -0.66226584] 
+  img_res: [128, 128]
+  gripper_close_time: 1.0
+  obs_act_fixed_time: 0.15
+  dt: 0.20
+  retrieval_pose_filename: /home/rbslab/place-from-pick-learning/data/hardcoded_grasps/srj/retrieval_pose.pkl
+  retrieval_pose_noise: 0.025
+  grasp_pose_filename: null
+  use_pregrasp: True
+  use_compliant_grasping: True
+  sts_config_dir: null

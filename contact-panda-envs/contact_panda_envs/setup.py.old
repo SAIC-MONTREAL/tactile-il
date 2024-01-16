@@ -1,0 +1,13 @@
+## ! DO NOT MANUALLY INVOKE THIS setup.py, USE CATKIN INSTEAD
+
+from setuptools import find_packages
+from distutils.core import setup
+from catkin_pkg.python_setup import generate_distutils_setup
+
+# fetch values from package.xml
+setup_args = generate_distutils_setup(
+    # packages=['contact_panda_envs'],
+    packages=find_packages(),
+    package_dir={'': 'contact_panda_envs'})
+
+setup(**setup_args)

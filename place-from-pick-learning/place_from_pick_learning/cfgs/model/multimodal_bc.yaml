@@ -1,0 +1,25 @@
+model_name: multimodalbc
+model_config:
+  _target_: place_from_pick_learning.models.MultimodalBC
+  rotation_representation: ${rotation_representation}
+  n_frame_stacks: ${n_frame_stacks}
+  shared_net_fc_layer_list: [256, 256]
+  shared_net_activation_func_list: ['ReLU', 'ReLU']
+  shared_net_embedding_dim: 256
+  action_distribution: ${action_distribution}
+  n_kps: 64
+  use_shift_augmentation: False
+  use_depth: False
+  use_spatial_encoding: False
+  use_input_coord_conv: False
+  use_low_noise_eval: True
+  freeze_resnet: False
+  sequential_model: 'none'
+  use_gripper: False
+  gripper_fc_layer_list: [128]
+  gripper_activation_func_list: ['ReLU']
+  gripper_embedding_dims: 64
+  use_ee: False
+  ee_fc_layer_list: [128]
+  ee_activation_func_list: ['ReLU']
+  ee_embedding_dims: 64

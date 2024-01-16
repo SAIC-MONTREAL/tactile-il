@@ -1,0 +1,5 @@
+{
+    "z_scale": 10.0,
+    "z_torque_scale": 0.0333,
+    "avg_mag_thresh": 0.05
+}

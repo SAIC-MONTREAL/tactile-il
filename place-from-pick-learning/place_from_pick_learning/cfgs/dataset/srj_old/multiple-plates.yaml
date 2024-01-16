@@ -1,0 +1,22 @@
+dataset_name: multiple-plates
+dataset_config:
+  _target_: datasets.MultimodalManipBCDataset
+  data_dirs: [
+    "/home/rbslab/place-from-pick-learning/datasets/srj_old/dt-0.2_img-res-128_episodes-16_all-blinds-down_7fcabecc92cc4ae092ffae53013d5be3",
+    "/home/rbslab/place-from-pick-learning/datasets/srj_old/dt-0.2_img-res-128_episodes-16_all-blinds-down_025ba5b4246849d7bacac8668ff31d1a",
+    "/home/rbslab/place-from-pick-learning/datasets/srj_old/dt-0.2_img-res-128_episodes-16_all-blinds-down_23516353815946f5a46737a3a05c4023",
+    "/home/rbslab/place-from-pick-learning/datasets/srj_old/dt-0.2_img-res-128_episodes-16_all-blinds-down_cedb0544b87049c8a70c1fad1f15edad",
+    "/home/rbslab/place-from-pick-learning/datasets/srj_old/dt-0.2_img-res-128_episodes-16_2-plates_all-blinds-down_0de6c13596f74e69b8f9245cbfb4d98a",
+    "/home/rbslab/place-from-pick-learning/datasets/srj_old/dt-0.2_img-res-128_episodes-16_2-plates_all-blinds-down_a6c0feb15153478d88f6da40fe6b1e3c",
+    "/home/rbslab/place-from-pick-learning/datasets/srj_old/dt-0.2_img-res-128_episodes-16_2-plates_all-blinds-down_e6de365275ae47ec8535c32b3bc3c5f4",
+    "/home/rbslab/place-from-pick-learning/datasets/srj_old/dt-0.2_img-res-128_episodes-16_2-plates_all-blinds-down_e83a48a15c0a41529e4124361efe468f",
+    "/home/rbslab/place-from-pick-learning/datasets/srj_old/dt-0.2_img-res-128_episodes-16_3-plates_all-blinds-down_8cc49502a809434da832635c45fc8ae8",
+    "/home/rbslab/place-from-pick-learning/datasets/srj_old/dt-0.2_img-res-128_episodes-16_3-plates_all-blinds-down_516cb9efd4d94144a5ae9f54abbb74a5",
+    "/home/rbslab/place-from-pick-learning/datasets/srj_old/dt-0.2_img-res-128_episodes-16_3-plates_all-blinds-down_f0118f1df80c482184a63162ac0c18c7",
+    "/home/rbslab/place-from-pick-learning/datasets/srj_old/dt-0.2_img-res-128_episodes-16_3-plates_all-blinds-down_f968787d218c4bc181ea736d74cfdc73"
+  ] 
+  rotation_representation: ${rotation_representation}
+  n_frame_stacks: ${n_frame_stacks}
+  seq_length: ${seq_length}
+  load_tensor: True
+  device: ${device}

@@ -1,0 +1,11 @@
+dataset_name: single-plate
+dataset_config:
+  _target_: datasets.MultimodalManipBCDataset
+  data_dirs: ["/home/rbslab/place-from-pick-learning/datasets/srj/single-plate_128-episodes_02257cbb881a4976899b6e293942ddba"] 
+  rotation_representation: ${rotation_representation}
+  n_frame_stacks: ${n_frame_stacks}
+  seq_length: ${seq_length}
+  load_tensor: True
+  device: ${device}
+  n_max_episodes: null
+  use_tactile: False

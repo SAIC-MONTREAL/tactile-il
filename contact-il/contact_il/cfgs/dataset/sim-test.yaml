@@ -1,0 +1,15 @@
+dataset_name: sim-test
+dataset_config:
+  _target_: place_from_pick_learning.datasets.MultimodalManipBCDataset
+  data_dirs: [
+    "/home/t.ablett/datasets/contact-il/demonstrations/sts-test-nocompress/data",
+  ]
+  env_config_file: "/home/t.ablett/datasets/contact-il/demonstrations/sts-test-nocompress/env_parameters.json"
+  obs_rotation_representation: "${obs_rotation_representation}"
+  stored_obs_rotation_representation: "${stored_obs_rotation_representation}"
+  act_rotation_representation: "${act_rotation_representation}"
+  stored_act_rotation_representation: "${stored_act_rotation_representation}"
+  n_frame_stacks: ${n_frame_stacks}
+  seq_length: ${seq_length}
+  load_tensor: True
+  device: ${device}

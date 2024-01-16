@@ -1,0 +1,117 @@
+# NOTE many fields in here are still unused, implement as necessary.
+
+# resetting
+# reset_base_tool_tf: [ 0.53387155, -0.01183898,  0.54965825, -2.95180842,  1.07462126,  3.1165864]
+# reset_joint_pos: [-0.38549274, -0.5974367, 0.3258614, -2.4916039, -0.16921327,  2.9867933, -2.0714548 ]
+reset_base_tool_tf: [0.35430369, 0.1247003,  0.52592601, 3.09927201, 0.62799267, 2.99414734]
+reset_joint_pos: [-0.36612878, -1.12888809,  0.50153951, -2.49008865,  0.44892901,  2.05897328, -2.28873614]
+
+# reset_base_tool_tf: [0.307, 0, 0.487, 3.14159, -.0245, 0]  # 3 for trans, 3 for rot, static xyz rotations
+# reset_joint_pos: [-0.001, -0.794, 0.001, -2.363, 0, 1.583, 0.785]     # 1 per joint, ensures consistent pose for above tf
+state_base_frame: "panda_link0"
+
+# env
+polymetis_control: True
+polymetis_ee_json_name: "franka-gripper-and-white-realsense.json"
+sts_pysts: True
+dense_reward: False
+max_real_time: 12              # in seconds
+success_causes_done: False
+failure_causes_done: False
+init_gripper_random_lim: [0, 0, 0, 0, 0, 0]
+obs_is_dict: True
+
+# path relative to contact_panda_envs/envs..no default one because it should always be defined for every env manually
+auto_reset_traj_file: ""
+
+# control
+control_freq: 10              # Hz
+valid_act_t_dof: [1, 1, 1]
+valid_act_r_dof: [1, 1, 1]
+t_action_base_frame: 'b'      # b or t
+r_action_base_frame: 'b'      # b or t
+control_type: 'delta_tool'    # 'delta_tool', 'delta_joint', 'pos_tool', 'pos_joint', 'vel_tool', 'vel_joint'
+rot_act_rep: 'rod'            # 'rod' for rodrigues, 'quat' for quaternion
+# max_trans_vel: .15        # m/s
+max_trans_vel: .5        # m/s
+# max_rot_vel: .3           # rad/s
+max_rot_vel: .8           # rad/s
+moveit_max_velocity_scaling_factor: 0.5  # 1.0 tries to use the max possible velocity, only used for moveit/reset
+max_policy_time: .06          # max expected time that a running policy would take -- this should be set as low as possible
+# max_policy_time: .04          # max expected time that a running policy would take -- this should be set as low as possible
+                              # this also should include the max time to process images before they are returned
+                              # in step AND the forward time for the failure predictor
+                              # -- finally, this must be lower than 1/control_freq
+target_pose_lpf: 1.0          # 1.0 means no filter, default in panda code was 0.005
+stiffness_params: {"translational_stiffness": 550.0,
+                   "rotational_stiffness": 30.0,
+                   "nullspace_stiffness": 0.5}
+damping_params: {"translational_damping": 2.0,
+                   "rotational_damping": 2.0,
+                   "nullspace_damping": 2.0}
+
+# gripper
+grip_in_action: False
+gripper_type: "panda"         # or srj
+default_grip_state: 'o'       # 'o' for open, 'c' for closed
+max_grip_force: 10            # max force when grasp action server is used
+max_grip_width: 0.08          # for panda gripper..not sure how this works for srj
+target_grip_width: 0.01       # for use with the gripper client grasp
+grip_speed: 0.05               # gripper speed
+pinch_width: 0.04             # for envs that use pinch (closer initial width) instead of fully open
+
+# physical constraints
+global_pos_limits: [[0.0, 0.7], [-0.5, 0.5], [0.3, 1.0]]
+
+# force and torque thresholds, see https://github.com/frankaemika/franka_ros/blob/develop/franka_control/config/franka_control_node.yaml
+collision_behavior: {"joint_torque_max": [20.0, 20.0, 18.0, 18.0, 16.0, 14.0, 12.0],  # all Nm, per joint
+                     "force_torque_max": [20.0, 20.0, 20.0, 25.0, 25.0, 25.0]}  # default is 20N, first 3 are N, last 3 are Nm, Oliver recommends doubling!
+
+# https://frankaemika.github.io/docs/libfranka.html#:~:text=surpass%20the%20configured%20thresholds%2C%20a%20cartesian_reflex%20or%20joint_reflex%20error%20will%20be%20triggered%20respectively.%20You%20can%20configure%20the%20thresholds%20with%20the%20franka%3A%3ARobot%3A%3AsetCollisionBehavior%20non%20realtime%20command
+# when you're setting this up, use the link above for help
+
+# observations
+num_prev_pose: 5
+num_prev_grip: 2
+num_objs: 0
+pose_relative: 'base'        # options: reset, base -- reset is relative to reset frame, base is to base
+state_data: ['pose', 'prev_pose', 'grip_pos', 'prev_grip_pos', 'obj_pos', 'obj_rot', 'force_torque_sensor',
+             'force_torque_internal', 'timestep', 'joint_pos']
+# num_grip_fingers: 2         # only in observations for now since action is still binary
+num_grip_fingers: 1         # in polymetis, single parameter "width"
+
+
+# images
+img_in_state: True         # for non-sts cameras, such as realsense, base mounted or wrist mounted
+depth_in_state: False
+img_namespaces: ['wrist']            # since polymetis client automatically connects to all, place in list corresponds to index
+img_resolution: [212, 120]
+img_vertical_flip: True     # if camera is mounted upside down, flip image
+img_horizontal_flip: True     # just for consistency in images, going to flip horizontally as well
+img_center_crop: 1.0        # e.g. 2.0 cuts out half of height, half of width, only taking middle
+img_crop: [[0., 0.], [1., 1.]]        # top left and bottom right corners, in floats, of crop box, [[0,0],[1,1]] is none
+depth_max_dist: 5.0         # in meters, anything beyond this value is fixed to this value, and the actual depth
+                            # img is stored as 0 for 0m, and 1.0 for this value and higher -- currently unused
+require_img_depth_registration: True  # whether img and depth must be registered, since user creating cam nodes
+                                      # needs to take care of this themselves
+cam_forward_axis: x         # forward axis of camera_link frame -- x for sim and realsense, z for kinect
+sensor: realsense           # realsense or kinect
+
+# tactile
+sts_namespaces: ['sts']
+sts_config_dirs: ['']
+sts_no_switch_override: False
+# sts_data: ['flow', 'marker_flow']      # floats, even if arranged as image
+sts_data: []      # floats, even if arranged as image
+sts_images: ['raw_image']             # uint8 images
+sts_num_data: ['avg_force', 'in_contact']            # numerical data, not arranged as image
+sts_initial_mode: 'visual'
+sts_filter_markers: 'average'
+sts_mode_switch_type: 'displacement'
+sts_mode_switch_req_ts: 4
+# sts_tac_thresh: 0.5
+sts_tac_thresh: 0.7  # works better with new sensor
+sts_vis_thresh: 0.25
+sts_resolution: [212, 120]
+sts_tactile_mode_object_flow_channel: 'b'
+sts_switch_in_action: True

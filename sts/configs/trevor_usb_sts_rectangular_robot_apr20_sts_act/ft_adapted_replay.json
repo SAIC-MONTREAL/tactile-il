@@ -1,0 +1,82 @@
+{
+    "sts_to_ee_eul_rxyz": [
+        1.5707963,
+        -1.5707963,
+        0.0
+    ],
+    "calib_reset_random_change_sts_frame": [
+        0.01,
+        0.005,
+        0.0,
+        2.0,
+        2.0,
+        5.0
+    ],
+    "normal": {
+        "use": true,
+        "num_calib_trajs": 5,
+        "max_calib_dist": 0.025,
+        "max_dist": 0.030260804865392687,
+        "m_0": 131.28255791987593,
+        "b_0": 0.0,
+        "m_1": 403.49425867806605,
+        "b_1": -1.3609655152833249,
+        "x_trans_point": 0.005
+    },
+    "shear_x": {
+        "use": false,
+        "num_calib_trajs": 4,
+        "max_calib_dist": 0.01,
+        "max_dist": 0.008500614294957952,
+        "m_0": 298.69782085918496,
+        "b_0": 0.0
+    },
+    "shear_y": {
+        "use": false,
+        "num_calib_trajs": 4,
+        "max_calib_dist": 0.01,
+        "max_dist": 0.007993171297853622,
+        "m_0": 143.86818244885535,
+        "b_0": 0.0
+    },
+    "torque": {
+        "use": false,
+        "num_calib_trajs": 4,
+        "max_calib_dist": 12.0,
+        "max_dist": 1.10022165477499,
+        "m_0": -24.242246026028774,
+        "b_0": 0.0
+    },
+    "binary_contact": {
+        "z_addition": 0.02,
+        "backoff_time": 0.5,
+        "load_time": 0.4
+    },
+    "mat_rot_mod": 15,
+    "max_trans_mod": 0.02,
+    "ft_lpf_coef": 0.5,
+    "des_ft_med_filt_kernel": 5,
+    "no_contact_lpf_coef": 0.5,
+    "open_loop_del_ft": {
+        "mults": [
+            0.0015,
+            0.0015,
+            0.0015,
+            0.0,
+            0.0,
+            0.0015
+        ]
+    },
+    "closed_loop_pid": {
+        "pid": {
+            "Kp": 0.001,
+            "Ki": 0.0,
+            "Kd": 1e-06
+        },
+        "use_torque": true,
+        "future_weights": {
+            "discount": 0.5,
+            "max_steps": 5
+        }
+    }
+}

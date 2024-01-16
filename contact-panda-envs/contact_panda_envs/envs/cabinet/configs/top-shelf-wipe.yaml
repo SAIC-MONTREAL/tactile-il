@@ -1,0 +1,11 @@
+reset_base_tool_tf: [0.7046278, 0.2551558, 0.7407978, -1.557828, 0.05042441, -1.739718]
+reset_joint_pos: [-0.08201867, 0.166005, 0.5824674, -1.386212, -1.624539, 2.481574, -2.363098]
+init_gripper_random_lim: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]  # no noise since it's only a test env
+max_real_time: 10  # in seconds
+
+# making poses/actions more "realistic", as if we had a mobile base instead of fixed arm to cabinet transform
+pose_relative: 'reset'        # options: reset, base -- reset is relative to reset frame, base is to base
+t_action_base_frame: 't'      # b or t
+r_action_base_frame: 't'      # b or t
+
+sts_tac_thresh: 0.75

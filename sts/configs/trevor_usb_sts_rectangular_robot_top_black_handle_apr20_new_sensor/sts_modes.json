@@ -1,0 +1,5 @@
+{
+  "default": "tactile",
+  "modes": ["visual", "tactile", "halfway"]
+}
+

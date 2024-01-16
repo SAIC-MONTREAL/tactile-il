@@ -1,0 +1,9 @@
+PandaTopGlassOrb/real_data_1/40_eps/1/wrist_rgb-sts_raw_image-pose-prev_pose/2023-04-08_2023-04-08_
+PandaTopGlassOrb/real_data_1/40_eps/2/wrist_rgb-sts_raw_image-pose-prev_pose/2023-04-09_2023-04-09_
+PandaTopGlassOrb/real_data_1/40_eps/3/wrist_rgb-sts_raw_image-pose-prev_pose/2023-04-09_2023-04-09_
+PandaTopGlassOrb/real_data_1/20_eps/1/wrist_rgb-sts_raw_image-pose-prev_pose/2023-04-09_2023-04-09_
+PandaTopGlassOrb/real_data_1/20_eps/2/wrist_rgb-sts_raw_image-pose-prev_pose/2023-04-09_2023-04-09_
+PandaTopGlassOrb/real_data_1/20_eps/3/wrist_rgb-sts_raw_image-pose-prev_pose/2023-04-09_2023-04-09_
+PandaTopGlassOrb/real_data_1/40_eps/1/wrist_rgb-sts_raw_image-pose-prev_pose/2023-04-08_2023-04-08_n_grad_updates=100000,n_scheduler_grad_updates=50000
+PandaTopGlassOrb/real_data_1/40_eps/2/wrist_rgb-sts_raw_image-pose-prev_pose/2023-04-09_2023-04-09_n_grad_updates=100000,n_scheduler_grad_updates=50000
+PandaTopGlassOrb/real_data_1/40_eps/3/wrist_rgb-sts_raw_image-pose-prev_pose/2023-04-09_2023-04-09_n_grad_updates=100000,n_scheduler_grad_updates=50000

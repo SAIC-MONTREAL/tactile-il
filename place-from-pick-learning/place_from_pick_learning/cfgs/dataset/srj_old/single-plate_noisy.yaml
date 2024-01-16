@@ -1,0 +1,14 @@
+dataset_name: single-plate_noisy
+dataset_config:
+  _target_: datasets.MultimodalManipBCDataset
+  data_dirs: [
+    "/home/rbslab/place-from-pick-learning/datasets/srj/dt-0.2_img-res-128_episodes-16_with-noise_all-blinds-down_0b94e5ef6a4546f2bdb692556e3ee43e",
+    "/home/rbslab/place-from-pick-learning/datasets/srj/dt-0.2_img-res-128_episodes-16_with-noise_all-blinds-down_54d25d02ff2d4d6b83cf8c403751997a",
+    "/home/rbslab/place-from-pick-learning/datasets/srj/dt-0.2_img-res-128_episodes-16_with-noise_all-blinds-down_a48f1bd504cd42588ee332efd87f2419",
+    "/home/rbslab/place-from-pick-learning/datasets/srj/dt-0.2_img-res-128_episodes-16_with-noise_all-blinds-down_f6884d988e194762a3bee08896bd9d37"
+  ] 
+  rotation_representation: ${rotation_representation}
+  n_frame_stacks: ${n_frame_stacks}
+  seq_length: ${seq_length}
+  load_tensor: True
+  device: ${device}

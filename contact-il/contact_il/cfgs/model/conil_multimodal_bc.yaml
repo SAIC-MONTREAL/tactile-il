@@ -1,0 +1,29 @@
+model_name: conil_multimodal_bc
+model_config:
+  _target_: place_from_pick_learning.models.MultimodalBCAnyObs
+  rotation_representation: ${act_rotation_representation}
+  n_frame_stacks: ${n_frame_stacks}
+  shared_net_fc_layer_list: [256, 256]
+  shared_net_activation_func_list: ['ReLU', 'ReLU']
+  shared_net_embedding_dim: 256
+  action_distribution: ${action_distribution}
+  n_kps: 64
+  # n_kps: 2
+  use_shift_augmentation: False
+  # use_spatial_encoding: False
+  use_spatial_encoding: True
+  use_input_coord_conv: False
+  use_low_noise_eval: False
+  freeze_resnet: False
+  sequential_model: 'none'
+  obs_key_list: [
+    "pose",
+    "prev_pose",
+    "sts_raw_image",
+    "wrist_rgb",
+    # "sts_flow",
+    # "sts_marker_flow"
+  ]
+  state_fc_layer_list: [128]
+  state_activation_func_list: ['ReLU']
+  state_embedding_dims: 64

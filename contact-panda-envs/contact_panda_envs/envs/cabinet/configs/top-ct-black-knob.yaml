@@ -1,0 +1,6 @@
+reset_base_tool_tf: [ 0.66645145,  0.04546653,  0.5592998,  -2.96318808,  1.02661896, -2.98275133]
+reset_joint_pos: [-1.05285315, -0.30546962,  1.07164386, -2.0479399,   0.44551065,  2.91901486, -2.64462715]
+init_gripper_random_lim: [.01, .01, .01, .1, .1, .1]  # 1 cm translation in all dimensions, roughly 5 degrees
+max_real_time: 12  # in seconds
+sts_num_contact_tac_thresh: 800
+sts_num_contact_vis_thresh: 200

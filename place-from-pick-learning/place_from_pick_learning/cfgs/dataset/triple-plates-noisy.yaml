@@ -1,0 +1,15 @@
+dataset_name: triple-plates-noisy
+dataset_config:
+  _target_: datasets.MultimodalManipBCDataset
+  data_dirs: [
+    "/home/rbslab/place-from-pick-learning/datasets/srj/triple-plates_first-red_32-episodes_6f80d555e4d44f8f82d4614e520bd499", 
+    "/home/rbslab/place-from-pick-learning/datasets/srj/triple-plates_second-green_32-episodes_b98c40488038492886640fc69f7b962d", 
+    "/home/rbslab/place-from-pick-learning/datasets/srj/triple-plates_third-blue_32-episodes_114b42e0240d4a85b0840c2ce9274469"
+  ] 
+  rotation_representation: ${rotation_representation}
+  n_frame_stacks: ${n_frame_stacks}
+  seq_length: ${seq_length}
+  load_tensor: True
+  device: ${device}
+  n_max_episodes: null
+  use_tactile: False

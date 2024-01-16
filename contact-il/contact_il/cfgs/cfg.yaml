@@ -1,0 +1,57 @@
+defaults:
+  # - _self_
+  - model: conil_multimodal_bc
+  - dataset: generic
+
+# training settings
+device: 'cuda'
+cudnn_deterministic: true
+cudnn_benchmark: false
+id: 'no_id'
+obs_str: 'default_obs'
+random_seed: 1
+training_limit: 'grad_updates'  # grad_updates or epochs
+n_grad_updates: 20000
+n_scheduler_grad_updates: 10000
+n_epochs: 4096
+n_scheduler_epochs: 1024
+n_checkpoint_epochs: 32
+n_batches: 32
+n_workers: 0
+lr: .0003
+weight_decay: .1
+initial_weights_path: null
+val_split: 0.0
+n_frame_stacks: 0
+seq_length: 1
+rotation_representation: null
+obs_rotation_representation: 'quat'
+stored_obs_rotation_representation: 'quat'
+act_rotation_representation: 'rvec'
+stored_act_rotation_representation: 'rvec'
+action_distribution: 'deterministic'
+data_dir_name: 'poly-top-glass-orb-3x3x3point3rad'  # directory, if using generic above
+
+hydra:
+  job:
+    # chdir: True
+    env_copy:
+      - CIL_DATA_DIR
+    config:
+      override_dirname:
+        exclude_keys:
+          - data_dir_name
+          - random_seed
+          - id
+          - obs_str
+          - model_config.obs_key_list
+          - device
+          - dataset_config.n_max_episodes
+  run:
+    # dir: ${oc.env:CIL_DATA_DIR}/models/${now:%Y-%m-%d}/${hydra.job.override_dirname}_${now:%Y-%m-%d}/
+    # dir: ${env:CIL_DATA_DIR}/models/${data_dir_name}/${random_seed}/${model_config.obs_key_list}/${id}_${hydra.job.override_dirname}/
+    dir: ${env:CIL_DATA_DIR}/models/${data_dir_name}/${dataset_config.n_max_episodes}_eps/${obs_str}/${id}_${hydra.job.override_dirname}/${random_seed}
+  sweep:
+    # dir: ${oc.env:CIL_DATA_DIR}/models/${now:%Y-%m-%d}/${hydra.job.override_dirname}_${now:%H-%M-%S}/
+    dir: ${env:CIL_DATA_DIR}/models/${now:%Y-%m-%d}/${hydra.job.override_dirname}_${now:%H-%M-%S}/
+    subdir: ${hydra.job.num}

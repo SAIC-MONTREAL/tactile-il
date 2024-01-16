@@ -1,0 +1,14 @@
+# This file's purpose is to stop Hydra from saving a new config file to a 
+# log directory 'outputs' every time that set_config.py is run.
+#
+# Avoid using this file to set default config values; defaults should remain 
+# in the JSON files.
+defaults:  
+  - _self_  
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled  
+  
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .

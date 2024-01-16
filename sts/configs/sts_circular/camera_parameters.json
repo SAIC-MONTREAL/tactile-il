@@ -1,0 +1,32 @@
+{
+    "exposure_auto": {
+        "min": 0,
+        "max": 3,
+        "val": 1,
+        "cmd": "exposure_auto"
+    },
+    "exposure_absolute": {
+        "min": 1,
+        "max": 10000,
+        "val": 1000,
+        "cmd": "exposure_absolute"
+    },
+    "brightness": {
+        "min": 0,
+        "max": 100,
+        "val": 50,
+        "cmd": "brightness"
+    },
+    "contrast": {
+        "min": -100,
+        "max": 100,
+        "val": 0,
+        "cmd": "contrast"
+    },
+    "saturation": {
+        "min": -100,
+        "max": 100,
+        "val": 0,
+        "cmd": "saturation"
+    }
+}
